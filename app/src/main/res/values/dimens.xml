@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="layout_weight">1</dimen>
+<!--    <dimen name="layout_wi">match_parent</dimen>-->
+<!--    <dimen name="layout_he">wrap_content</dimen>-->
+    <dimen name="textSize">20dp</dimen>
+</resources>
