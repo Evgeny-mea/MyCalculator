@@ -1,5 +1,7 @@
 package com.mea.mycalculator;
 
+import android.widget.TextView;
+
 public class СalculatorLogic {
     private int firstArg;
     private int secondArg;
@@ -21,7 +23,7 @@ public class СalculatorLogic {
         state = State.firstArgInput;
     }
 
-    public void onNumPressed (int buttonId) {
+    public void onNumPressed (int buttonId, TextView text) {
 
         if (state == State.resultShow) {
             state = State.firstArgInput;
@@ -70,9 +72,10 @@ public class СalculatorLogic {
                     break;
             }
         }
+        text.setText(inputStr.toString());
     }
 
-    public void onActionPressed(int actionId) {
+    public void onActionPressed(int actionId, TextView text) {
         if (actionId == R.id.buttonRes && state == State.secondArgInput && inputStr.length() > 0) {
             secondArg = Integer.parseInt(inputStr.toString());
             state = State.resultShow;
@@ -97,48 +100,49 @@ public class СalculatorLogic {
             state = State.operationSelected;
             actionSelected = actionId;
         }
+        text.setText(inputStr.toString());
     }
 
-    public String getText() {
-        StringBuilder str = new StringBuilder();
-        switch (state) {
-            default:
-                return inputStr.toString();
-            case operationSelected:
-                return str.append(firstArg).append(' ')
-                        .append(getOperationChar())
-                        .toString();
-            case secondArgInput:
-                return str.append(firstArg).append(' ')
-                        .append(getOperationChar())
-                        .append(' ')
-                        .append(inputStr)
-                        .toString();
-            case resultShow:
-                return str.append(firstArg).append(' ')
-                        .append(getOperationChar())
-                        .append(' ')
-                        .append(secondArg)
-                        .append(" = ")
-                        .append(inputStr.toString())
-                        .toString();
-        }
-    }
+//    public String getText() {
+//        StringBuilder str = new StringBuilder();
+//        switch (state) {
+//            default:
+//                return inputStr.toString();
+//            case operationSelected:
+//                return str.append(firstArg).append(' ')
+//                        .append(getOperationChar())
+//                        .toString();
+//            case secondArgInput:
+//                return str.append(firstArg).append(' ')
+//                        .append(getOperationChar())
+//                        .append(' ')
+//                        .append(inputStr)
+//                        .toString();
+//            case resultShow:
+//                return str.append(firstArg).append(' ')
+//                        .append(getOperationChar())
+//                        .append(' ')
+//                        .append(secondArg)
+//                        .append(" = ")
+//                        .append(inputStr.toString())
+//                        .toString();
+//        }
+//    }
 
-    private char getOperationChar() {
-        switch (actionSelected) {
-            case R.id.buttonAdd:
-                return '+';
-            case R.id.buttonMinus:
-                return '-';
-            case R.id.buttonMult:
-                return '*';
-            case R.id.buttonDiv:
-            default:
-                return '/';
-
-        }
-    }
+//    private char getOperationChar() {
+//        switch (actionSelected) {
+//            case R.id.buttonAdd:
+//                return '+';
+//            case R.id.buttonMinus:
+//                return '-';
+//            case R.id.buttonMult:
+//                return '*';
+//            case R.id.buttonDiv:
+//            default:
+//                return '/';
+//
+//        }
+//    }
 
 
 }

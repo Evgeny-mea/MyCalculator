@@ -41,28 +41,44 @@ public class MainActivity extends AppCompatActivity {
 
         calculatorLogic = new СalculatorLogic();
 
-        View.OnClickListener numberButtonClickListener = new View.OnClickListener() {
+//        View.OnClickListener numberButtonClickListener = new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                calculatorLogic.onNumPressed(view.getId());
+//                text.setText(calculatorLogic.getText());
+//            }
+//        };
+
+//        View.OnClickListener actionButtonOnclickListener = new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                calculatorLogic.onActionPressed(view.getId());
+//                text.setText(calculatorLogic.getText());
+//            }
+//        };
+
+        View.OnClickListener LogicEnter = new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                calculatorLogic.onNumPressed(view.getId());
-                text.setText(calculatorLogic.getText());
+            public void onClick(View v) {
+                calculatorLogic.onActionPressed(v.getId(), text);
             }
         };
 
-        View.OnClickListener actionButtonOnclickListener = new View.OnClickListener() {
+
+        View.OnClickListener NumberEnter = new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                calculatorLogic.onActionPressed(view.getId());
-                text.setText(calculatorLogic.getText());
+            public void onClick(View v) {
+                calculatorLogic.onNumPressed(v.getId(), text);
             }
         };
+
 
         for (int i = 0; i < numbers.length; i++) {
-            findViewById(numbers[i]).setOnClickListener(numberButtonClickListener);
+            findViewById(numbers[i]).setOnClickListener(NumberEnter);
         }
 
         for (int i = 0; i < logic.length; i++) {
-            findViewById(logic[i]).setOnClickListener(actionButtonOnclickListener);
+            findViewById(logic[i]).setOnClickListener(LogicEnter);
         }
     }
 }
