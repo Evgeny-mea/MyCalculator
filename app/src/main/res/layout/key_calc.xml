@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TableLayout
+        android:id="@+id/one"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_columnSpan="4"
+        android:layout_margin="1dp"
+        android:gravity="bottom"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/button7"
+                style="@style/MyStyles"
+                android:layout_marginLeft="0dp"
+                android:text="@string/button7" />
+
+            <Button
+                android:id="@+id/button8"
+                style="@style/MyStyles"
+                android:text="@string/button8" />
+
+            <Button
+                android:id="@+id/button9"
+                style="@style/MyStyles"
+                android:text="@string/button9" />
+
+            <Button
+                android:id="@+id/buttonDiv"
+                style="@style/MyStyles"
+                android:layout_marginLeft="20dp"
+                android:text="@string/div" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/button4"
+                style="@style/MyStyles"
+                android:layout_marginLeft="0dp"
+                android:text="@string/button4" />
+
+            <Button
+                android:id="@+id/button5"
+                style="@style/MyStyles"
+                android:text="@string/button5" />
+
+            <Button
+                android:id="@+id/button6"
+                style="@style/MyStyles"
+                android:text="@string/button6" />
+
+            <Button
+                android:id="@+id/buttonMult"
+                style="@style/MyStyles"
+                android:layout_marginLeft="20dp"
+                android:text="@string/mult" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/button1"
+                style="@style/MyStyles"
+                android:layout_marginLeft="0dp"
+                android:text="@string/button1" />
+
+            <Button
+                android:id="@+id/button2"
+                style="@style/MyStyles"
+                android:text="@string/button2" />
+
+            <Button
+                android:id="@+id/button3"
+                style="@style/MyStyles"
+                android:text="@string/button3" />
+
+            <Button
+                android:id="@+id/buttonAdd"
+                style="@style/MyStyles"
+                android:layout_marginLeft="20dp"
+                android:text="@string/add" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/button0"
+                style="@style/MyStyles"
+                android:layout_marginLeft="0dp"
+                android:text="@string/button0" />
+
+            <Button
+                android:id="@+id/buttonPt"
+                style="@style/MyStyles"
+                android:text="@string/buttonPt" />
+
+            <Button
+                android:id="@+id/buttonRes"
+                style="@style/MyStyles"
+                android:text="@string/res" />
+
+            <Button
+                android:id="@+id/buttonMinus"
+                style="@style/MyStyles"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="1"
+                android:text="@string/minus" />
+        </TableRow>
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/settings"
+                style="@style/MyStyles"
+                android:layout_marginLeft="0dp"
+                android:text="@string/settings" />
+        </TableRow>
+    </TableLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
