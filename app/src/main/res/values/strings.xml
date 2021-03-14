@@ -20,4 +20,5 @@
     <string name="minus">-</string>
     <string name="div">/</string>
     <string name="res">=</string>
+    <string name="settings">Настройки</string>
 </resources>

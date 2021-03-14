@@ -1,6 +1,9 @@
 package com.mea.mycalculator;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -41,22 +44,6 @@ public class MainActivity extends AppCompatActivity {
 
         calculatorLogic = new СalculatorLogic();
 
-//        View.OnClickListener numberButtonClickListener = new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                calculatorLogic.onNumPressed(view.getId());
-//                text.setText(calculatorLogic.getText());
-//            }
-//        };
-
-//        View.OnClickListener actionButtonOnclickListener = new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                calculatorLogic.onActionPressed(view.getId());
-//                text.setText(calculatorLogic.getText());
-//            }
-//        };
-
         View.OnClickListener LogicEnter = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -80,5 +67,13 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0; i < logic.length; i++) {
             findViewById(logic[i]).setOnClickListener(LogicEnter);
         }
+
+        findViewById(R.id.settings).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), SettingsActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
